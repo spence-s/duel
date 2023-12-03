@@ -1,12 +1,17 @@
-# spence-s-starter-template
+# Duel
 
-Hello, this is my personal starter template for creating node.js libraries.
+Inspired by https://github.com/knightedcodemonkey/duel but much simpler.
 
-Features Include:
-- MIT License
-- Configured for ESM only output
-- editorconfig
-- linting with xo (space configuration)
-- formatting with prettier and xo
-- markdown linting and formatting with prettier
-- package.json linting and formatting with prettier-plugin-package-json and npm-package-json-lint
+Use raw typescript to get dual ESM/CJS build, no bundler needed.
+
+For this package to work, all imports must be CJS, ESM only imports will break the CJS build.
+
+### How it works
+
+1) Takes your ESM project and copies the whole thing to a temp dir.
+2) Renames all your ts files cts file
+3) runs typescript build again
+4) copies the build back into the original directory
+
+
+
